@@ -1,0 +1,15 @@
+
+#speedbar {
+    width: 40px;
+    margin: 0px auto;
+    height: 500px;
+    background-color: green;
+}
+
+#controller {
+    width: 40px;
+    height: 40px;
+    background-color: blue;
+    position: relative;
+    top: 230px;
+}
