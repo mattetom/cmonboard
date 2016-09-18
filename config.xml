@@ -4,9 +4,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.cmonboard.controller"
-version   = "1.0.13">
+version   = "1.1.45">
 
-    <name>Hello World</name>
+    <name>C'monStick</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -15,6 +15,7 @@ version   = "1.0.13">
     <author href="http://cmonboard.com" email="hello@cmonboard.com">
         C'monBoard Team
     </author>
+    <icon src="img/logo.png" />
 
     <!--
         If you do not want any permissions to be added to your app, add the
@@ -24,12 +25,12 @@ version   = "1.0.13">
     <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
-    <preference name="phonegap-version"           value="3.5.0" />          <!-- all: current version of PhoneGap -->
-    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
+    <preference name="phonegap-version"           value="3.6.3" />          <!-- all: current version of PhoneGap -->
+    <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
-    <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
-    <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
+    <preference name="webviewbounce"              value="false" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
+    <preference name="prerendered-icon"           value="false" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
     <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
     <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
@@ -44,5 +45,6 @@ version   = "1.0.13">
     <gap:plugin name="com.megster.cordova.bluetoothserial" version="0.2.2" />
     
     <!-- Core plugins -->
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
     
 </widget>

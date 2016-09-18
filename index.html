@@ -1,17 +1,59 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+        
         <script type="application/javascript" src="phonegap.js"></script>
         <script type="application/javascript" src="index.js."></script>
         <script type="application/javascript" src="bluetooth.js"></script>
         <script type="application/javascript" src="cmonboard.js"></script>
-        
+
+        <script type="application/javascript">
+            function geolocationSuccess(position) {
+                console.log(position);
+                document.getElementById('speed').innerHTML =position.coords.speed + ' m/s';
+            }
+            
+            function geolocationError(error) {
+                console.log('code: ' + error.code + ' - message: ' + error.message);
+            }
+            
+            function onLoad() {
+                //document.getElementById('messages').innerHTML = 'onload';
+                //document.addEventListener("deviceready", onDeviceReady, false);
+
+                //app.initialize();
+                setTimeout(onDeviceReady,500);
+            }
+
+            function onDeviceReady() {
+                //alert('ondeviceready');
+                console.log('ondevceready');
+                //document.getElementById('messages').innerHTML = 'ondeviceready';
+                isDeviceConnected();
+                startup();
+                
+                // register speed watcher
+                var watchId = navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, { enableHighAccuracy: true });
+            }
+            
+            //onDeviceReady();
+        </script>
+
         <link rel="stylesheet" href="cmonboard.css" />
     </head>
-    
-    <body>
+
+    <body onload="onLoad()">
+        <h1>C'monStick</h1>
+        <div class="dashboardblock" id="speed"></div>
+        <div class="dashboardblock" id="track"></div>
+        <div class="dashboardblock" id="mode"></div>
+        <div class="dashboardblock" id="battery"></div>
         <div id="speedbar">
             <div id="controller"></div>
         </div>
-        
+        <a class="settingsBtn" href="settings.html"><img src="img/gear.png" alt="settings" /></a>
     </body>
 </html>

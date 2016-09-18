@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script type="application/javascript" src="phonegap.js"></script>
+        <script type="application/javascript" src="index.js"></script>
+        <script type="application/javascript" src="bluetooth.js"></script>
+        <script type="application/javascript" src="cmonboard.js"></script>        
+        <link rel="stylesheet" href="cmonboard.css" />
+    </head>
+
+    <body>
+        <div id="advancedsettings" style="display: none;">
+            <input type="text" id="customValue" style="font-size:2em;vertical-align:bottom;" />
+            <input type="button" value="Send" onclick="sendCustomValue()"  style="padding:0.8em; font-size: 1em;" />
+            <br /><br /><br />
+        </div>
+        <input type="button" value="Connect" onclick="connectHC05()"  style="padding:0.8em; font-size: 1em;" />
+        <div id="messages"></div>
+        <div onclick="document.getElementById('advancedsettings').removeAttribute('style');">Advanced</div>
+    </body>
+
+</html>
